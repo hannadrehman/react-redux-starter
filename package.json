@@ -1,0 +1,122 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "main": "index.jsx",
+  "scripts": {
+    "start": "set NODE_ENV=development&& npm-run-all --parallel open:dev lint:watch npm:lock",
+    "prebuild": "npm run remove-dist && mkdir dist",
+    "build:prod": "set NODE_ENV=production&& webpack",
+    "build:dev": "set NODE_ENV=development&& webpack",
+    "lint": " esw src --color",
+    "lint:watch": "npm run lint --watch",
+    "open:dev": "webpack-dev-server",
+    "open:dist": "http-server ./dist -p 8081 -s -o",
+    "remove-dist": "rimraf ./dist",
+    "npm:lock": "npm shrinkwrap",
+    "test:dev": "set NODE_ENV=test&&Set TEST_ENV=development&&jest -u",
+    "test:prod": "set NODE_ENV=test&&Set TEST_ENV=production&&jest -u",
+    "coverage:dev": "set NODE_ENV=test&&Set TEST_ENV=development&&jest --coverage",
+    "coverage:prod": "set NODE_ENV=test&&Set TEST_ENV=production&&",
+    "installmodules": "npm install",
+    
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-polyfill": "^6.26.0",
+    "detect-browser": "^2.0.0",
+    "font-awesome": "^4.7.0",
+    "highlight.js": "^9.12.0",
+    "prop-types": "^15.6.0",
+    "raf": "^3.4.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-hot-loader": "^3.1.3",
+    "react-quill": "^1.1.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "axios-mock-adapter": "^1.10.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "compression-webpack-plugin": "^1.0.1",
+    "copy-webpack-plugin": "^4.2.0",
+    "css-loader": "^0.28.7",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "eslint-watch": "^3.1.3",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "http-server": "^0.10.0",
+    "jest": "^21.2.1",
+    "node-sass": "^4.6.1",
+    "npm-run-all": "^4.1.1",
+    "postcss-loader": "^2.0.8",
+    "react-addons-perf": "^15.4.2",
+    "react-test-renderer": "^16.1.1",
+    "redux-mock-store": "^1.3.0",
+    "sass-loader": "^6.0.6",
+    "sinon": "^4.1.2",
+    "style-loader": "^0.19.0",
+    "system-bell-webpack-plugin": "^1.0.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^3.0.3"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "automock": false,
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react/",
+      "<rootDir>/node_modules/react-dom/"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "modulePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text"
+    ]
+  }
+}
