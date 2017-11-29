@@ -20,8 +20,6 @@ const vendor = [
       'redux-thunk',
       'axios',
       'babel-polyfill',
-      'react-quill',
-      'highlight.js',
       'browser-detect'
       ];
 // Configuration object
