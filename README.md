@@ -42,8 +42,6 @@ This projects aims at creating a plug-and-play component for adding question ans
 14. reduxJS 
 15. react-redux 
 16. fontAwesome
-17. react-quill 
-18. highlightJS
 19. webpack 
 
 # References 
