@@ -1,4 +1,4 @@
-# React-redux-starter kit is a complete assets kit for reactjs project with redux
+# React-redux-starter kit is a complete assets kit for reactjs project with redux and Eslint
 This projects aims at creating a plug-and-play component for adding question answere features to any existing internal projects.
 
 ## read INSTALL.md for installation and basic setup guide
