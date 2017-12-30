@@ -9,8 +9,8 @@ import './styles.scss';
 
 // dynamic component loading. will create a seperate bundle for each component
 // saves bundle huge sizes
-const HomeComponent = AsyncComponentLoader(() => import('./Home'));
-const LoginComponent = AsyncComponentLoader(() => import('./Login'));
+const HomeComponent = AsyncComponentLoader(() => import(/* webpackChunkName: 'home' */ './Home'));
+const LoginComponent = AsyncComponentLoader(() => import(/* webpackChunkName: 'login' */ './Login'));
 
 
 const Routes = () => (
