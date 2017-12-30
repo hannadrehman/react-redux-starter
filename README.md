@@ -67,7 +67,7 @@ all Files and Folders in the root directore are described below:
   3.  [.gitignore](/.gitignore) : config for git that contains ignore file info. ex we dont want nodemodules to be stored on git
   4.  [.CHANGELOG.md](/.CHANGELOG.md) : all release notes and changes per version will be mentioned here.
   5.  [License.md](/License.md) : license info
-  6.  [ webpack.config.js](/ webpack.config.js) : configuration file for webpack which will have transpile and bundle our project
+  6.  [webpack.config.js](/ webpack.config.js) : configuration file for webpack which will have transpile and bundle our project
   7.  [yarn-error.log](/yarn-error.log)  : will contains error logs if occured in yarn execution
   8.  [README.md](/README.md)  : contains usefull info.
   9.  [package.json](/package.json)  : contains all dependency details and also Jest config
@@ -130,6 +130,7 @@ the src folder has following structure
       3. __Element__ : smallest components that will replace html elements like textbox,list,label etc. these are placed inside elemetns folder
       4. __Route__ Component these are page level components that will define the page /route of an app. these are placed in Routes folder
 5. Each component can use redux , for which the need to have 1 actions.js and reducer.js file created in the same directory
+
 6. Structure of a Component :
    a component is bascially a folder with all the required files.
    
@@ -141,9 +142,11 @@ the src folder has following structure
       |   +-- actions.js -- if a component uses redux all action creators for the component    
       |   +-- utility.js -- helper functions for the component usually pure functions
       |   +-- MyComponent.spec.js -- Unit test cases for the component
-  ``` 
+  
+   ``` 
 
 7. structure for Redux store is :
+
     ```
       +--App -- root component
       |   +-- common
@@ -168,6 +171,7 @@ the src folder has following structure
       finally it will be exported and used in the store.
       the store folder has cominedReducerfile which will import this component and pass it to the 
       redux store.
+
 8. Component Types in ReactJS
     there are 3 component types in reactJS as of now. you should read about these 3 components before
     diving into the code.
@@ -196,10 +200,13 @@ this file has following sections.
 
 }
 ```
+
 ### also read about npm/yarn proxy settings and npm/yarn registry.
 
 # Understanding all scripts 
+
 ```
+
 {
   "start": "starts the project in development environment also starts other commands like dev server ,
   lint, webpack  etc",
@@ -213,12 +220,6 @@ this file has following sections.
   "remove-dist": "deletes /dist folder",
   "test:stage": "starts JEST test tool with TEST_ENV=development",
   "test:prod": "starts JEST test tool with TEST_ENV=production",
-  "installmodules": "will install all modules npm or yarn you have to edit it",
-  "copy:stage": "moves the code to dev server, edit if dev server changes",
-  "copy:prod": "moves the code to dev server, edit if production server changes",
-  "setproxy": "clearproxy httpproxy httpsproxy will be called by this in series",
-  "setlocalregistry": "changes the default registry to desired, can be changes if local registry changes",
-  "deploy:build-stage": "starts jest test:stage , covereage:stage ,prebuild,deploy:stage and calls them in sequence",
-  "deploy:build-prod": "starts jest test:prod , covereage:prod ,prebuild,deploy:prod and calls them in sequence",
 }
+
 ```
