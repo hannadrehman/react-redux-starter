@@ -40,13 +40,12 @@
 14. [JestJS](https://facebook.github.io/jest/   )
 15. [EnzymeJS](http://airbnb.io/enzyme/docs/api/)
 16. [FontAwesome](http://fontawesome.io/icons/)
-17. [React-quill](https://zenoamaro.github.io/react-quill/ , https://quilljs.com/)
-18. [HighlightJS](https://highlightjs.org/)
-19. [Eslint for VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-20. [Yarn](https://yarnpkg.com/en/)
-21. [CSS FLEXBOX](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
-22. [Bootstrap v4 grid](https://v4-alpha.getbootstrap.com/layout/grid/#grid-options)
-23. [Bootstrap v4 responsive breakpoints](https://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints)
+17. [HighlightJS](https://highlightjs.org/)
+18. [Eslint for VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+19. [Yarn](https://yarnpkg.com/en/)
+20. [CSS FLEXBOX](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
+21. [Bootstrap v4 grid](https://v4-alpha.getbootstrap.com/layout/grid/#grid-options)
+22. [Bootstrap v4 responsive breakpoints](https://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints)
 
 
 # More References 
