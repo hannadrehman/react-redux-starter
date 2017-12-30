@@ -8,7 +8,8 @@
     "plugins": [
       "react-hot-loader/babel",
       "transform-object-rest-spread",
-      "transform-class-properties"
+      "transform-class-properties",
+      "dynamic-import-webpack"
     ],
   "env":{
     "test":{
@@ -18,7 +19,8 @@
     ],
     "plugins": [
       "transform-object-rest-spread",
-      "transform-class-properties"
+      "transform-class-properties",
+      "dynamic-import-webpack"
     ]}
   }
 }

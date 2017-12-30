@@ -1,0 +1,50 @@
+// all variables and media queries for responsive layout
+$desktop:'only screen  and (min-width : 1224px) and (max-width:1800px)';
+$desktop-v2:'only screen  and  (max-width:1440px)';
+$small-desktop:'only screen and (min-width : 769px) and (max-width : 1280px)';
+$small-desktop-v2:'only screen and (min-width : 1279px) and (max-width : 1355px)';
+$small-desktop-v3:'only screen and (min-width : 769px) and (max-width : 992px)';
+$large-desktop:'only screen  and (min-width : 1824px)';
+$smartphone-port:'only screen and (min-width : 320px)  and (max-width : 480px)';
+$smartphone-land:'only screen and (min-width : 320px)  and (max-width : 480px) and (orientation : landscape)';
+$iphone-4-port:'only screen and (min-width : 320px) and (max-width : 480px) and (orientation : portrait)'; // and (-webkit-min-pixel-ratio : 2)';
+$iphone-4-land:'only screen and (min-width : 320px) and (max-width : 480px) and (orientation : landscape) '; //and (-webkit-min-pixel-ratio : 2)';
+$iphone-5-port:'only screen and (min-width: 320px) and (max-width: 568px) and (orientation : portrait)'; //and (-webkit-pixel-ratio: 2)';
+$iphone-5-land:'only screen and (min-width: 320px) and (max-width: 568px) and (orientation : landscape)'; //and (-webkit-pixel-ratio: 2)';
+$iphone-6-port:'only screen and (min-width: 375px) and (max-width: 667px) and (orientation : portrait) '; //and (-webkit-pixel-ratio: 2)';
+$iphone-6-land:'only screen and (min-width: 375px) and (max-width: 667px) and (orientation : landscape)'; //and (-webkit-pixel-ratio: 2)';
+$iphone-6-plus-port:'only screen and (min-width: 414px) and (max-width: 736px) and (orientation : portrait)'; //and (-webkit-pixel-ratio: 2)';
+$iphone-6-plus-land:'only screen and (min-width: 414px) and (max-width: 736px) and (orientation : landscape) '; //and (-webkit-pixel-ratio: 2)';
+$s-4-port:'only screen and (min-width: 320px) and (max-width: 640px) and (orientation : portrait) and'; //and (-webkit-pixel-ratio: 3)';
+$s-4-land:'only screen and (min-width: 320px) and (max-width: 640px) and (orientation : landscape) and'; //and (-webkit-pixel-ratio: 3)';
+$s-5-port:'only screen and (min-width: 360px) and (max-width: 640px) and (orientation : portrait) and '; //and(-webkit-pixel-ratio: 3)';
+$s-5-land:'only screen and (min-width: 360px) and (max-width: 640px) and (orientation : landscape) and '; //and(-webkit-pixel-ratio: 3)';
+$ipad-port:'only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait)';
+$ipad-land:'only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape)';
+$ipad-pro:'only screen and (min-width : 1023px) and (max-width : 1366px) and (orientation : portrait)';
+$nexus-tab:'only screen and (min-width : 600px) and (max-width : 960px) and (orientation : portrait)';
+$mobile-tab-port:'only screen and (min-width : 320px) and (max-width : 1023px) and (orientation : portrait)';
+$mobile-tab-land:'only screen and (min-width : 321px) and (max-width : 1023px) and (orientation : landscape)';
+// ends here.
+// some general screens
+$general-smartphone:'only screen and (min-width : 320px) and (max-width : 480px)';
+$general-smartphone-l:'only screen and (min-width : 321px)';
+$general-smartphone-p:'only screen and (min-width : 320px)';
+$general-tablet:'only screen and (min-width : 768px) and (max-width : 1024px)';
+$general-tablet-l:'only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape)';
+$general-tablet-p:'only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait)';
+$general-desktop:'only screen and (min-width : 1824px)';
+$large-desktop:'only screen and (min-width : 1824px)';
+$iph-5:'only screen and (min-width: 320px) and (max-width: 568px)';
+$iph-5-l:'only screen and (min-width: 320px) and (max-height: 568px) and (orientation: landscape)';
+$iph-5-p:'only screen and (min-width: 320px) and (max-height: 568px) and (orientation: portrait)';
+// sitevars
+$font-size-base-qna:16px;
+$header-bg: #3f51b5;
+$menu-width: 250px!default;
+$content-width: 1000px;
+$breakpoint: 800px;
+$nav-height: 70px;
+$nav-background: #262626;
+$nav-font-color: #ffffff;
+$link-hover-color: #2581DC;

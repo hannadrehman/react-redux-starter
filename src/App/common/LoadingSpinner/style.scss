@@ -1,0 +1,12 @@
+.loadingspinner_wrapper{
+  position: relative;
+  width: 100%;
+  padding: 2px;
+  .spinner{
+    margin: auto;
+    text-align: center;
+    img{
+      width: 40px;
+    }
+  }
+}

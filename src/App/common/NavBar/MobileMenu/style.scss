@@ -1,0 +1,81 @@
+@import '../../../scss/colors.scss';
+@import '../../../scss/mixins.scss';
+
+.mobilemenu_wrapper{
+  position: relative;
+  .menu-mobile{
+    @include bp-desktop{
+      display: none;
+    }
+    @include bp-small-desktop{
+      display: none;
+    }
+    position: relative;
+    background-color: $color-primary-blue;
+    width: 100vw;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 88888;
+    height: 0px;
+    transition: height 500ms ease-in-out;
+    &.open{
+      height: 100vh;
+      overflow: hidden;
+      .mobile-nav{
+        visibility: visible;
+        opacity: 1;
+      }
+      .mobile-nav-list{
+        li{
+        transform: translateX(0px);
+        }
+      }
+
+    }
+    &.closed{
+      height: 0px;
+      .mobile-nav{
+        visibility: hidden;
+        opacity: 0;
+      }
+      .mobile-nav-list{
+        li{
+        transform: translateX(-15px);
+        }
+      }
+    }
+  }
+  .mobile-nav{
+    transition: visibility 0.5s, opacity 0.5s linear;
+    opacity: 0;
+    visibility: hidden;
+    width: 80vw;
+    margin: auto;
+    padding: 5px;
+  }
+  .mobile-nav-list{
+    @include font-size(24px);
+    list-style-type: none;
+    li{
+      transition: transform 500ms ease-in-out;
+      transform: translateX(-15px);
+      padding: 10px;
+      padding-left: 5px;
+      border-bottom: 1px solid $color-thin-gray;
+      $my-prop: ':nth-child' !default;
+      $list-len:7;
+      $multiplier:70;
+      @for $i from 1 to $list-len {
+        &:nth-child(#{$i}) {
+          transition-delay : #{$multiplier*$i}ms;
+        }
+      }
+    }
+    .mobile-links{
+      color: white !important;
+      padding-right: 100px;
+    }
+
+  }
+}

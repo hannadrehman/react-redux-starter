@@ -6,7 +6,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 const env=process.env.NODE_ENV;
 const isProd = (env.toLowerCase().trim() === 'production')? true: false;
@@ -20,6 +22,7 @@ const vendor = [
       'redux-thunk',
       'axios',
       'babel-polyfill',
+      'react-quill',
       'browser-detect'
       ];
 // Configuration object
@@ -77,6 +80,7 @@ const config = {
       { test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?mimetype=application/octet-stream&name=assests/fonts/[name].[ext]' },
       { test: /\.svg(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?mimetype=image/svg+xml&name=assests/fonts/[name].[ext]' },
       { test: /\.(jpe?g|png|gif|ico)$/i, loader: 'file-loader?name=assests/images/[name].[ext]' },
+      // { test: /\.(jpe?g|png|gif|ico)$/i, loader: 'url-loader?name=assests/images/[name].[ext]' },
     ],
   },
   devServer: {
@@ -98,32 +102,29 @@ const config = {
       },
     }),
     new SystemBellPlugin(),
-    new CopyWebpackPlugin( [{from:'src/web.config',to:'./'}])
-
+    new CopyWebpackPlugin( [{from:'src/web.config',to:'./'}]),
   ],
 };
 
 if (isProd) {
   Array.prototype.push.apply(config.plugins, [
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: true,
+      compress: {
+        warnings: false, // Suppress uglification warnings
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        screw_ie8: true
+      },
+      output: {
+        comments: false,
+      },
+      exclude: [/\.min\.js$/gi] // skip pre-minified libs
+      }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors',
-      minChunks(module) {
-        const { context } = module;
-        if (typeof context !== 'string') {
-          return false;
-        }
-        return context.indexOf('node_modules') !== -1;
-      },
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      minChunks(module, count) {
-        return count >= 2;
-      },
-    }),
+
     new CompressionPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
@@ -158,7 +159,27 @@ if (isProd) {
       },
       inject: true,
     }),
-    new webpack.optimize.ModuleConcatenationPlugin()
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendors',
+      minChunks(module) {
+        const { context } = module;
+        if (typeof context !== 'string') {
+          return false;
+        }
+        return context.indexOf('node_modules') !== -1;
+      },
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      minChunks(module, count) {
+        return count >= 2;
+      },
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    })
   ]);
 } else {
   config.entry.splice(1, 0, 'react-hot-loader/patch');

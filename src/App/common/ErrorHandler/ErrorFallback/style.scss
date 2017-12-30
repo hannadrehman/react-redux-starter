@@ -1,0 +1,24 @@
+@import '../../../scss/colors.scss';
+@import '../../../scss/mixins.scss';
+
+.errorfallback_wrapper{
+  width: 90%;
+  padding: 5px;
+  position: relative;
+  margin: auto;
+  background-color: $color-thin-gray;
+  color: black ;
+  border-radius: 5px;
+  .image-container{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    img{
+      width: 5%;
+    }
+    p{
+      @include font-size(10px);
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,300 @@
+@import "colors.scss";
+@import "variables.scss";
+//media queries
+@mixin bp-desktop {
+    @media #{$desktop} {
+        @content;
+    }
+}
+
+@mixin bp-desktop-v2 {
+    @media #{$desktop-v2} {
+        @content;
+    }
+}
+@mixin bp-small-desktop {
+    @media #{$small-desktop} {
+        @content;
+    }
+}
+
+@mixin bp-small-desktop-v2 {
+    @media #{$small-desktop-v2} {
+        @content;
+    }
+}
+@mixin bp-small-desktop-v3 {
+  @media #{$small-desktop-v3} {
+      @content;
+  }
+}
+
+@mixin bp-large-desktop {
+    @media #{$large-desktop} {
+        @content;
+    }
+}
+
+@mixin bp-smartphone-port {
+    @media #{$smartphone-port} {
+        @content;
+    }
+}
+
+@mixin bp-smartphone-land {
+    @media #{$smartphone-land} {
+        @content;
+    }
+}
+
+@mixin bp-iphone-4-port {
+    @media #{$iphone-4-port} {
+        @content;
+    }
+}
+
+@mixin bp-iphone-4-land {
+    @media #{$iphone-4-land} {
+        @content;
+    }
+}
+
+@mixin bp-iphone-5-port {
+    @media #{$iphone-5-port} {
+        @content;
+    }
+}
+
+@mixin bp-iphone-5-land {
+    @media #{$iphone-5-land} {
+        @content;
+    }
+}
+
+@mixin bp-iphone-6-port {
+    @media #{$iphone-6-port} {
+        @content;
+    }
+}
+
+@mixin bp-iphone-6-land {
+    @media #{$iphone-6-land} {
+        @content;
+    }
+}
+
+@mixin bp-iphone-6-plus-port {
+    @media #{$iphone-6-plus-port} {
+        @content;
+    }
+}
+
+@mixin bp-iphone-6-plus-land {
+    @media #{$iphone-6-plus-land} {
+        @content;
+    }
+}
+
+@mixin bp-s-4-port {
+    @media #{$s-4-port} {
+        @content;
+    }
+}
+
+@mixin bp-s-4-land {
+    @media #{$s-4-land} {
+        @content;
+    }
+}
+
+@mixin bp-s-5-port {
+    @media #{$s-5-port} {
+        @content;
+    }
+}
+
+@mixin bp-s-5-land {
+    @media #{$s-5-land} {
+        @content;
+    }
+}
+
+@mixin bp-ipad-port {
+    @media #{$ipad-port} {
+        @content;
+    }
+}
+
+@mixin bp-ipad-land {
+    @media #{$ipad-land} {
+        @content;
+    }
+}
+@mixin bp-ipad-pro {
+  @media #{$ipad-pro} {
+      @content;
+  }
+}
+@mixin bp-nexus-tab {
+  @media #{$nexus-tab} {
+      @content;
+  }
+}
+
+@mixin bp-mobile-tab-port {
+    @media #{$mobile-tab-port} {
+        @content;
+    }
+}
+
+@mixin bp-mobile-tab-land {
+    @media #{$mobile-tab-land} {
+        @content;
+    }
+}
+
+// some general media
+@mixin bp-smart-ph {
+    @media #{$general-smartphone} {
+        @content;
+    }
+}
+
+@mixin bp-smart-ph-l {
+    @media #{$general-smartphone-l} {
+        @content;
+    }
+}
+
+@mixin bp-smart-ph-p {
+    @media #{$general-smartphone-p} {
+        @content;
+    }
+}
+
+@mixin bp-tab {
+    @media #{$general-tablet} {
+        @content;
+    }
+}
+
+@mixin bp-tab-l {
+    @media #{$general-tablet-l} {
+        @content;
+    }
+}
+
+@mixin bp-tab-p {
+    @media #{$general-tablet-p} {
+        @content;
+    }
+}
+
+@mixin bp-desk {
+    @media #{general-desktop} {
+        @content;
+    }
+}
+
+@mixin bp-desk-l {
+    @media #{large-desktop} {
+        @content;
+    }
+}
+
+@mixin bp-iph5 {
+    @media #{$iph-5} {
+        @content;
+    }
+}
+
+@mixin bp-iph5-l {
+    @media #{$iph-5-l} {
+        @content;
+    }
+}
+
+@mixin bp-iph5-p {
+    @media #{$iph-5-p} {
+        @content;
+    }
+}
+
+// ends here
+//margin
+@mixin transitions($string) {
+    -webkit-transition: #{$string};
+    -moz-transition: #{$string};
+    -o-transition: #{$string};
+    transition: #{$string};
+}
+
+@mixin custom-transform($string) {
+    -webkit-transform: #{$string};
+    -moz-transform: #{$string};
+    -o-transform: #{$string};
+    -ms-transform: #{$string};
+    transform: #{$string};
+}
+
+//ends here
+//animations
+//starts here
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin custom-animations($string) {
+    -webkit-animation: #{$string};
+    -moz-animation: #{$string};
+    -o-animation: #{$string};
+    animation: #{$string};
+}
+
+//ends here
+//font-size
+//starts here
+@function calculateRem($size) {
+    $remSize: $size / $font-size-base-qna;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+//ends here
+@mixin border-radius($str) {
+    -moz-border-radius: #{$str};
+    -webkit-border-radius: #{$str};
+    border-radius: #{$str};
+}
+
+@mixin prefix($name, $argument) {
+    -webkit-#{$name}: #{$argument};
+    -ms-#{$name}: #{$argument};
+    -moz-#{$name}: #{$argument};
+    -o-#{$name}: #{$argument};
+    #{$name}: #{$argument};
+}
+
+@mixin text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

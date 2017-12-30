@@ -1,0 +1,19 @@
+@import '../scss/colors.scss';
+@import '../scss/mixins.scss';
+@import '../scss/bootstrap-breakpoints';
+
+.routes_wrapper{
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid $color-thin-gray;
+    background-color: white;
+    top: 10px;
+    min-height:calc(100vh - 60px);
+
+    @include media-breakpoint-up(lg) {
+      width: 85%;
+      margin-top: 58px !important;
+     }
+    margin-top: 51px;
+}

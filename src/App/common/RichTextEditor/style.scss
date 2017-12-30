@@ -1,0 +1,20 @@
+.richtexteditor_wrapper{
+  position: relative;
+  width: 100%;
+  background-color: white;
+  .fa-pencil-square{
+    color:#444444;
+  }
+  .ql-snow .ql-editor code{
+    color: white;
+    background-color: #282c34
+  }
+.ql-container {
+.ql-snow .ql-editor pre.ql-syntax {
+  background-color: #282c34;
+}
+}
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+height: 200px;
+}
+}

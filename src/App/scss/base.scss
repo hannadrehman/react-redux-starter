@@ -1,0 +1,283 @@
+$fa-font-path: "~font-awesome/fonts";
+@import 'colors';
+@import 'mixins';
+@import '~font-awesome/scss/font-awesome.scss';
+@import 'bootstrap-import';
+
+
+html{
+  font-size: 16px !important;
+  box-sizing: border-box;
+  background-color: $color-cdg-lightest-gray;
+  font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif' !important;
+  box-sizing: border-box;
+}
+body {
+  background-color: $color-cdg-lightest-gray;
+  font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+  box-sizing: border-box;
+  background-image: url('../../assets/images/backgrounds/landscape-background.png');
+  line-height:1.2 !important; // to override bootstrap default 1.5 line height
+
+  ul{
+    padding: 0;
+    margin: 0;
+  }
+  p{
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+  .margin-top-2{
+    margin-top:2px !important;
+  }
+  .margin-top-4{
+    margin-top:4px !important;
+  }
+  .margin-top-6{
+    margin-top:6px !important;
+  }
+  .margin-top-8{
+    margin-top:8px !important;
+  }
+  .margin-top-10{
+    margin-top:10px !important;
+  }
+  .margin-top-16{
+    margin-top:16px !important;
+  }
+  .ql-snow .ql-editor pre.ql-syntax {
+    background-color: #282c34;
+  }
+  &.modal-active {
+    overflow: hidden;
+  }
+  .postition-relative{
+    position: relative
+  }
+}
+.c-danger {
+  color: $color-primary-red;
+}
+.c-warning {
+  color: $color-primary-orange;
+}
+.c-primary {
+  color: $color-primary-darkgreen;
+}
+.c-info {
+  color: $color-primary-blue;
+}
+.c-success {
+  color: $color-primary-lightgreen;
+}
+.c-grayed {
+  color: $color-cdg-gray-a;
+}
+.c-theme {
+  color: $color-cdg-nav;
+}
+
+.bg-danger {
+  background-color: $color-primary-red;
+}
+
+.bg-warning {
+  background-color: $color-primary-orange;
+}
+
+.bg-primary {
+  background-color: $color-primary-darkgreen;
+}
+
+.bg-info {
+  background-color: $color-primary-blue;
+}
+
+.bg-success {
+  background-color: $color-primary-lightgreen;
+}
+
+.bg-theme {
+  background-color: $color-cdg-nav;
+}
+
+.note {
+  border: 1px, $color-thin-gray;
+  box-shadow: 1px 2px 2px, $color-thin-gray;
+  margin-top: 10px;
+  background-color: $color-white;
+  position: relative;
+  width: 100%;
+  padding: 3px;
+  .note-head {
+      border-bottom: 1px solid $color-thin-gray;
+      padding: 10px;
+      line-height: 1.2;
+  }
+  .note-body {
+      padding: 10px;
+      line-height: 1.2;
+  }
+}
+
+.hbtn {
+  @include font-size(12px);
+  transition: background-color 200ms ease-in-out 0ms;
+  padding: 6px 21px;
+  border: none;
+  border-radius: 3px;
+  margin: 10px 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  outline: 0;
+  cursor: pointer;
+  text-decoration: none;
+  background: 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  min-width: 87px;
+  &:hover {
+      background-color: $color-thin-gray !important;
+      box-shadow: 1px 1px 1px $color-thin-gray;
+  }
+  &:focus {
+      background-color: $color-thin-gray;
+  }
+  &.raised {
+      @include transitions('box-shadow 200ms ease-in-out 0ms');
+      box-shadow: 1px 2px 3px, $color-raised-gray;
+      background: $color-white;
+      &:focus {
+          box-shadow: 0px 0px 10px, $color-raised-gray-active;
+      }
+  }
+  &:disabled {
+      color: $color-dark-gray !important;
+      cursor: not-allowed;
+      background-color: $color-white !important;
+  }
+  &.hbtn-danger {
+      background-color: $color-primary-red;
+      color: $color-white;
+      &:hover {
+          background-color: $color-primary-red-dark !important;
+      }
+  }
+  &.hbtn-warning {
+      background-color: $color-primary-orange;
+      color: $color-white;
+      &:hover {
+          background-color: $color-primary-orange-dark !important;
+      }
+  }
+  &.hbtn-primary {
+      background-color: $color-primary-darkgreen;
+      color: $color-white;
+      &:hover {
+          background-color: $color-primary-darkgreen-dark !important;
+      }
+  }
+  &.hbtn-info {
+      background-color: $color-primary-blue;
+      color: $color-white;
+      &:hover {
+          background-color: $color-primary-blue-dark !important;
+      }
+  }
+  &.hbtn-success {
+      background-color: $color-primary-lightgreen;
+      color: $color-white;
+      &:hover {
+          background-color: $color-primary-lightgreen-dark !important;
+      }
+  }
+  &.hbtn-submit {
+      background-color: $color-cdg-sky-blue !important;
+      color: $color-white !important;
+      &:hover {
+          background-color: $color-cdg-sky-blue-d !important;
+      }
+  }
+  &.hbtn-cancel {
+      color: $color-dark-gray !important;
+  }
+  &.hbtn-small {
+      width: 70px;
+      font-size: .6rem;
+      padding: 7px;
+  }
+  &.hbtn-large {
+      width: 200px;
+      font-size: 1.1rem;
+      padding: 20px;
+  }
+  &.hbtn-dab {
+      box-shadow: 1px 1px 1px, $color-raised-gray;
+      min-width: 56px;
+      min-height: 56px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      margin: auto;
+      font-size: 1.3rem;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+  }
+  &.hbtn-dab-mini {
+      box-shadow: 1px 1px 1px, $color-raised-gray;
+      min-width: 40px;
+      min-height: 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: auto;
+      font-size: 0.9rem;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      i {
+          margin: 0 auto;
+      }
+  }
+  &.hbtn-dab-micro {
+      box-shadow: 1px 1px 1px, $color-raised-gray;
+      min-width: 25px;
+      min-height: 25px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin: auto;
+      font-size: 0.9rem;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      i {
+          margin: 0 auto;
+      }
+  }
+  &.hbtn-bordered {
+      border: 1px solid gray !important;
+      &.border-theme {
+          border-color: $color-cdg-nav;
+          &:hover {
+              // color: white;
+          }
+      }
+  }
+  &.scrollTop-btn {
+      animations: slide-slowly-up 200ms ease-in-out;
+      position: fixed;
+      bottom: 20px;
+      right: 20px
+  }
+
+}
+
+
+.bloghead .title{
+  width:100%;
+
+}

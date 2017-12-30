@@ -1,0 +1,114 @@
+@import '../../../scss/colors.scss';
+@import '../../../scss/mixins.scss';
+@import '../../../scss/bootstrap-breakpoints';
+
+
+.account_wrapper{
+  position: relative;
+  .user-info{
+    display: table;
+    .picture,.name{
+      @include media-breakpoint-down(md) {
+        padding: 11px;
+      }
+      // @include bp-smartphone-port{
+      //   padding: 8px;
+      // }
+      // @include bp-smartphone-land{
+      //   padding: 8px;
+      // }
+      // @include bp-ipad-port{
+
+      // }
+      // @include bp-ipad-land{
+      //   padding: 12px;
+      // }
+      // @include bp-ipad-pro{
+      //   padding: 13px;
+      // }
+      // @include bp-nexus-tab{
+      //   padding: 8px;
+      // }
+      display: table-cell;
+      padding: 12px;
+      transition: all 200ms ease-in-out;
+      &:hover{
+        background-color: $color-primary-blue-dark;
+        cursor: pointer;
+      }
+    }
+    .name{
+      @include font-size(16px);
+      padding-left: 10px;
+      font-weight: 500;
+      color: white;
+    }
+    .picture{
+      color: white;
+      display: table-cell;
+      vertical-align: middle;
+      .table-cell{
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .repo,.fa{
+        @include bp-smartphone-port{
+         display: none;
+        }
+        display: table-cell;
+        padding: 0 5px;
+      }
+      .fa{
+        @include font-size(8px);
+      }
+      .imageavatar-wrapper{
+        display: table-cell;
+      }
+    }
+    .support{
+      // display: table-cell;
+      padding-bottom: 0 !important;
+    }
+    .list{
+      color: white;
+      list-style: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      vertical-align: middle;
+      .item{
+        @include media-breakpoint-down(md) {
+          padding: 19px;
+        }
+        // @include bp-smartphone-port{
+        //   padding: 15px;
+        // }
+        // @include bp-smartphone-land{
+        //   padding: 15px;
+        // }
+        // @include bp-ipad-port{
+        //   padding: 15px;
+        // }
+        // @include bp-ipad-land{
+        //   padding: 18px;
+        // }
+        // @include bp-ipad-pro{
+        //   padding: 18px;
+        // }
+        // @include bp-ipad-pro{
+        //   padding: 18px;
+        // }
+        // @include bp-nexus-tab{
+        //   padding: 15px;
+        // }
+        display: inline-block;
+        padding: 21px;
+        transition: all 200ms ease-in-out;
+        &:hover{
+          background-color: $color-primary-blue-dark;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

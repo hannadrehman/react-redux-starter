@@ -1,0 +1,10 @@
+.imageavatar_wrapper{
+  position: relative;
+  .image-with-fallback{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-color: white;
+    border-width: 1px;
+  }
+}
