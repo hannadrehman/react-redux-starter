@@ -1,5 +1,4 @@
 import { ApiRequestMaker } from '../services';
-import User from './AppModels';
 
 const requestMaker = new ApiRequestMaker();
 
@@ -19,12 +18,7 @@ export function logUserIn() {
   })
     .then(({ status, data, message }) => {
       if (status === 200 || status === 304) {
-        const thisUser = new User({
-          mailId: data.ID,
-          empName: data.UserName,
-          company: data.Password,
-        });
-        return Promise.resolve(thisUser);
+        return Promise.resolve(data);
       }
       return Promise.reject({ status, data, message }); //eslint-disable-line
     }, error => Promise.reject(error.data));

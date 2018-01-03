@@ -23,6 +23,7 @@
     "detect-browser": "^2.0.0",
     "font-awesome": "^4.7.0",
     "highlight.js": "^9.12.0",
+    "jsevents-js": "^1.0.0",
     "prop-types": "^15.6.0",
     "raf": "^3.4.0",
     "react": "^16.1.1",

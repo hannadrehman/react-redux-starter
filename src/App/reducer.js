@@ -12,11 +12,10 @@
 import { combineReducers } from 'redux';
 import commonReducer from './common/reducer';
 import { appActionNames } from './actions';
-import User from './AppModels';
 import routeReducer from './Routes/reducer';
 
 const defaultState = {
-  user: new User(),
+  user: {},
 };
 const appReducer = (state = defaultState, actions) => {
   switch (actions.type) {
@@ -28,7 +27,7 @@ const appReducer = (state = defaultState, actions) => {
     case appActionNames.APP_LOGOUT:
       return {
         ...state,
-        user: { ...new User() },
+        user: { },
       };
     default:
       return state;

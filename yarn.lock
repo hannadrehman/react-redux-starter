@@ -4497,6 +4497,10 @@ jsesc@~0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
 
+jsevents-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jsevents-js/-/jsevents-js-1.0.0.tgz#45737c2d3001a716c5c4ff51e4ebbac30794806a"
+
 json-loader@^0.5.4:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.7.tgz#dca14a70235ff82f0ac9a3abeb60d337a365185d"
