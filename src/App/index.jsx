@@ -22,7 +22,6 @@ import { BrowserRouter as Router } from 'react-router-dom'; // BrowserRouter For
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import JSEvents from 'jsevents-js';
 
 import NavBar from './common/NavBar';
 import Routes from './Routes';
@@ -38,9 +37,6 @@ class App extends React.Component {
   }
   constructor(props) { //eslint-disable-line
     super(props);
-    JSEvents.addEventListener('HOME', () => {
-      console.log('home has been loaded') //eslint-disable-line
-    }, this);
   }
   // when root loads fire checklogin
   componentWillMount() {
