@@ -4,7 +4,7 @@ import ApiRequestConfig from './helpers/ApiRequestConfig';
 import ApiRequestMaker from './helpers/ApiRequestMaker';
 import Device from './helpers/Device';
 import Environment from './helpers/Environment';
-import HTTP from './helpers/HTTP';
+import HTTPStatusCodes from './helpers/HTTPStatusCodes';
 import ArrayUtils from './helpers/ArrayUtils';
 
 export {
@@ -14,7 +14,7 @@ export {
   ApiRequestMaker,
   Device,
   Environment,
-  HTTP,
+  HTTPStatusCodes,
   ArrayUtils,
 };
 

@@ -2,7 +2,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
 import ApiRequestMaker from '../ApiRequestMaker';
-import HTTP from '../HTTP';
+import HTTPStatusCodes from '../HTTPStatusCodes';
 
 describe('Unit Test Cases for ApiRequestMaker class fire method', () => {
   jest.mock('../../../../__mocks__/ApiRequestMaker');
@@ -68,7 +68,7 @@ describe('Unit Test Cases for ApiRequestMaker data filter class', () => {
   let status;
   let message;
   let data;
-  const httpCodes = HTTP.statusCodes;
+  const httpCodes = HTTPStatusCodes.statusCodes;
   it('should filter data from service when success', () => {
     mockData = {
       status: 200,

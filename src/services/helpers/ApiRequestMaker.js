@@ -7,7 +7,7 @@
 */
 import axios from 'axios';
 import ApiRequestConfig from './ApiRequestConfig';
-import HTTP from './HTTP';
+import HTTPStatusCodes from './HTTPStatusCodes';
 /**
  * @class
  * @name ApiRequestMaker
@@ -95,9 +95,9 @@ class ApiRequestMaker {
       parseInt((copyData.status), 0) :
       parseInt((copyData.response.status), 0);
       // check if status codes exits in our lib
-    this.status = (HTTP.statusCodes[status]) ? status : 400;
+    this.status = (HTTPStatusCodes.statusCodes[status]) ? status : 400;
     // get message based on the code.
-    this.message = (HTTP.statusCodes[status]) ? HTTP.statusCodes[this.status] : 'BAD_REQUEST';
+    this.message = (HTTPStatusCodes.statusCodes[status]) ? HTTPStatusCodes.statusCodes[this.status] : 'BAD_REQUEST';
     this.responseData = copyData.data;
     return [this.status, this.message, this.responseData];
   }

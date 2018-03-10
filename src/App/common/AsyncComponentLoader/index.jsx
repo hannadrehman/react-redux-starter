@@ -38,6 +38,8 @@ const AsyncComponentLoader = (loader, collection) => (
               ...prevState,
               Component,
             }));
+          }, (err) => {
+            console.error(err);
           });
       }
     }

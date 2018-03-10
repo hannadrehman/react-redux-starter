@@ -6,29 +6,17 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const SystemBellPlugin = require('system-bell-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 const env=process.env.NODE_ENV;
 const isProd = (env.toLowerCase().trim() === 'production')? true: false;
-const vendor = [
-      'react',
-      'react-dom',
-      'react-router-dom',
-      'prop-types',
-      'redux',
-      'react-redux',
-      'redux-thunk',
-      'axios',
-      'babel-polyfill',
-      'react-quill',
-      'browser-detect'
-      ];
 // Configuration object
 const config = {
   devtool: isProd ? 'source-map' : 'source-map',
-  entry: ['babel-polyfill','./src/index'],
+  entry: ['./src/index'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: isProd ? '[name].[chunkhash].js' : 'bundle.js',
@@ -102,29 +90,59 @@ const config = {
       },
     }),
     new SystemBellPlugin(),
-    new CopyWebpackPlugin( [{from:'src/web.config',to:'./'}]),
   ],
+  optimization:{
+    splitChunks: {
+      cacheGroups: {
+        common: {
+          name: 'commons',
+          chunks: 'all',
+          // minSize: 1,
+          minChunks: 2,
+          enforce: true,
+        }
+       }
+    },
+    minimizer: [
+      new UglifyJsWebpackPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          mangle: true,
+          warning: "verbose",
+          ecma: 6,
+          beautify: false,
+          compress: true,
+          comments: false,
+          mangle: false,
+          toplevel: false,
+          keep_classnames: true,
+          keep_fnames: true
+        },
+        sourceMap: true
+      }),
+   ],
+  }
 };
 
 if (isProd) {
   Array.prototype.push.apply(config.plugins, [
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: true,
-      compress: {
-        warnings: false, // Suppress uglification warnings
-        pure_getters: true,
-        unsafe: true,
-        unsafe_comps: true,
-        screw_ie8: true
-      },
-      output: {
-        comments: false,
-      },
-      exclude: [/\.min\.js$/gi] // skip pre-minified libs
-      }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   mangle: true,
+    //   compress: {
+    //     warnings: false, // Suppress uglification warnings
+    //     pure_getters: true,
+    //     unsafe: true,
+    //     unsafe_comps: true,
+    //     screw_ie8: true
+    //   },
+    //   output: {
+    //     comments: false,
+    //   },
+    //   exclude: [/\.min\.js$/gi] // skip pre-minified libs
+    //   }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
-
     new CompressionPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
@@ -141,7 +159,7 @@ if (isProd) {
       },
     }),
     new HtmlWebpackPlugin({
-      title: 'KM Q&A',
+      title: 'React Starter',
       filename: 'index.html',
       template: './src/index.ejs',
       favicon: './src/favicon.ico',
@@ -161,25 +179,26 @@ if (isProd) {
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.HashedModuleIdsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors',
-      minChunks(module) {
-        const { context } = module;
-        if (typeof context !== 'string') {
-          return false;
-        }
-        return context.indexOf('node_modules') !== -1;
-      },
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      minChunks(module, count) {
-        return count >= 2;
-      },
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'runtime'
-    })
+    // new BundleAnalyzerPlugin()
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendors',
+    //   minChunks(module) {
+    //     const { context } = module;
+    //     if (typeof context !== 'string') {
+    //       return false;
+    //     }
+    //     return context.indexOf('node_modules') !== -1;
+    //   },
+    // }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'common',
+    //   minChunks(module, count) {
+    //     return count >= 2;
+    //   },
+    // }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'runtime'
+    // })
   ]);
 } else {
   config.entry.splice(1, 0, 'react-hot-loader/patch');
@@ -187,7 +206,7 @@ if (isProd) {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      title: 'KM Q&A',
+      title: 'React Starter',
       filename: 'index.html',
       template: './src/index.ejs',
       inject: true,

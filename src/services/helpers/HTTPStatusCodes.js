@@ -1,4 +1,4 @@
-class HTTP {
+class HTTPStatusCodes {
   static get statusCodes() {
     return {
       '-1': 'NETWORK_ERROR',
@@ -15,4 +15,4 @@ class HTTP {
     };
   }
 }
-export default HTTP;
+export default HTTPStatusCodes;

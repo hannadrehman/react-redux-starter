@@ -19,8 +19,8 @@ class Home extends React.PureComponent {
       <article className="home-wrapper">
         <section className="">
           <h1>Welcome Home</h1>
-          <section style={{ textAlign: 'center' }}>
-            <iframe title="React Fiber" width="560" height="315" src="https://www.youtube.com/embed/ZCuYPiUIONs" frameBorder="0" gesture="media" allow="encrypted-media" allowFullScreen />
+          <section >
+            HOME SCREEEEEEEEEEEEEEEEEEEEEEEEEEEEEN
           </section>
         </section>
       </article>
